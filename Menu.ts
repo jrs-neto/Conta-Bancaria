@@ -1,6 +1,6 @@
-import leia from "readline-sync";
 import { colors } from "./src/util/Colors";
 import { Conta } from "./src/model/Conta";
+import { Input } from "./src/util/Input";
 
 export function main() {
 
@@ -44,57 +44,73 @@ export function main() {
     console.log("           6 - Sacar                                   ");
     console.log("           7 - Depositar                               ");
     console.log("           8 - Transferir valores entre contas         ");
-    console.log("           9 - Sair                                    ");
+    console.log("           0 - Sair                                    ");
     console.log("                                                       ");
     console.log("*******************************************************");
     console.log("                                                       ");
 
     console.log("Entre com a opcao desejada: ");
-    opcao = leia.questionInt("");
+    opcao = Input.questionInt("");
 
-    if (opcao === 9) {
+    if (opcao === 0) {
       console.log(colors.fg.greenstrong, "\nBanco do Brazil com Z - O seu Futuro começa aqui!");
       sobre();
-      process.exit(9);
+      console.log(colors.reset, "");
+      process.exit(0);
     }
 
     switch (opcao) {
       case 1:
         console.log(colors.fg.whitestrong, "\n\nCriar conta\n\n", colors.reset);
+        keyPress()
         break;
       case 2:
         console.log(colors.fg.whitestrong, "\n\nListar todas as contas\n\n", colors.reset);
+        keyPress()
         break;
       case 3:
         console.log(colors.fg.whitestrong, "\n\nConsultar dados da Conta - por número\n\n", colors.reset);
+        keyPress()
         break;
       case 4:
         console.log(colors.fg.whitestrong, "\n\nAtualizar dados da Conta\n\n", colors.reset);
+        keyPress()
         break;
       case 5:
         console.log(colors.fg.whitestrong, "\n\nApagar uma Conta\n\n", colors.reset);
+        keyPress()
         break;
       case 6:
         console.log(colors.fg.whitestrong, "\n\nSaque\n\n", colors.reset);
+        keyPress()
         break;
       case 7:
         console.log(colors.fg.whitestrong, "\n\nDepósito\n\n", colors.reset);
+        keyPress()
         break;
       case 8:
         console.log(colors.fg.whitestrong, "\n\nTransferência entre Contas\n\n", colors.reset);
+        keyPress()
         break;
       default:
         console.log(colors.fg.whitestrong, "Operação Inválida!", colors.reset);
+        keyPress()
     }
   }
 }
 
-export function sobre(): void {
+function sobre(): void {
   console.log("*******************************************************");
   console.log("Programa desenvolvido por: José Rodrigues.");
-  console.log("Github:");
-  console.log("LinkedIn: ");
+  console.log("Github: https://github.com/jrs-neto");
+  console.log("LinkedIn: https://www.linkedin.com/in/jrodrigues-neto/");
   console.log("*******************************************************");
+}
+
+function keyPress(): void {
+  console.log(colors.reset, "");
+  console.log("\nPressione enter para continuar...");
+  Input.prompt();
 }
 
 main();
