@@ -24,7 +24,8 @@ export function main() {
     console.log("*******************************************************");
     console.log("                                                       ");
 
-    opcao = leia.questionInt("Entre com a opcao desejada: ");
+    console.log("Entre com a opcao desejada: ");
+    opcao = leia.questionInt("");
 
     if (opcao === 9) {
       console.log(colors.fg.greenstrong, "\nBanco do Brazil com Z - O seu Futuro começa aqui!");
