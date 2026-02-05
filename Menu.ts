@@ -1,38 +1,18 @@
 import { colors } from "./src/util/Colors";
 import { Conta } from "./src/model/Conta";
 import { Input } from "./src/util/Input";
+import { ContaCorrente } from "./src/model/ContaCorrente";
+import { ContaPoupanca } from "./src/model/ContaPoupanca";
 
 export function main() {
 
   let opcao: number;
 
-  // Instanciar Objetos da Classe Conta
-
-  const c1 = new Conta(1, 1234, "Sofia", 1, 100000.0);
-
-  c1.visualizar();
-
-  // Testes do Método Sacar
-  console.log("Sacar 100,00: ", c1.sacar(100.0));
-  console.log("Sacar 200000.0: ", c1.sacar(200000.0));
-  console.log("Sacar 0.00: ", c1.sacar(0.0));
-
-  // Testes do Método Depositar
-  console.log("Depositar -10.00: ");
-  c1.depositar(-10.0);
-
-  console.log("Depositar 500.00: ");
-  c1.depositar(500.0);
-
-  c1.visualizar();
-
-  // console.log("O titular da Conta é: ", c1.titular);
-  // console.log("O Saldo da Conta é: ", c1.saldo);
-
   while (true) {
-    console.log(colors.bg.black, colors.fg.yellow, "*******************************************************");
+    console.log(colors.bg.black, colors.fg.yellow);
+    console.log("*******************************************************");
     console.log("                                                       ");
-    console.log("             BANCO DO BRAZIL COM Z                     ");
+    console.log("             BANCO DO BRAZIL                           ");
     console.log("                                                       ");
     console.log("*******************************************************");
     console.log("                                                       ");
@@ -53,7 +33,7 @@ export function main() {
     opcao = Input.questionInt("");
 
     if (opcao === 0) {
-      console.log(colors.fg.greenstrong, "\nBanco do Brazil com Z - O seu Futuro começa aqui!");
+      console.log(colors.fg.greenstrong, "\nBanco do Brazil - O seu Futuro começa aqui!");
       sobre();
       console.log(colors.reset, "");
       process.exit(0);
