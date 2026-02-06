@@ -19,32 +19,12 @@ export class ContaPoupanca extends Conta {
     this._aniversario = aniversario;
   }
 
+  // Métodos GET e SET específicos da Classe Conta Poupanca
   public get aniversario() {
     return this._aniversario;
   }
   public set aniversario(aniversario: number) {
     this._aniversario = aniversario;
-  }
-
-  // Método sacar Sobrescrito
-  public sacar(valor: number): boolean {
-    if (valor <= 0) {
-      console.log(
-        colors.fg.red,
-        "O valor deve ser positivo",
-        colors.reset);
-      return false;
-    }
-    if (valor > this.saldo) {
-      console.log(
-        colors.fg.red,
-        "Saldo Insuficiente!",
-        colors.reset);
-      return false;
-    }
-
-    this.saldo -= valor;
-    return true;
   }
 
   // Método visualizar sobrescrito (Polimorfismo)
